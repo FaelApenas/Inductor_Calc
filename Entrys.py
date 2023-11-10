@@ -13,8 +13,8 @@ root.resizable(False, False)
 
 lb1 = tk.Label(root, text="Parametros", font=("Arial", 18)).grid(column=1, row=1)
 Label(text="coil_Area", background=b_color).place(x=10, y=50)
-coil_area_e = Entry(root)
-coil_area_e.place(x=110, y=50, width=200, height=20)
+coil_area = Entry(root)
+coil_area.place(x=110, y=50, width=200, height=20)
 
 Label(text="Coil lenght", background=b_color).place(x=10, y=75)
 coil_len = Entry(root)
@@ -33,31 +33,11 @@ N_turns.place(x=110, y=125, width=200, height=20)
 
 def Call_calc():  
     counter = 0 
-    counter2= 0
     result = ""
-    N_turns1 = N_turns.get()
-    indutance1=indutance.get()
-    coil_area_e1= coil_area_e.get()
-    coil_len1= coil_len.get() 
 
-    numbers= [N_turns1,indutance1,coil_area_e1,coil_len1] 
-
-    for item in numbers:  
-        if item == "": 
-            counter = numbers.index(item)+1 #Never is 0
-            
-        else : 
-             result= "Uma variavel precisa estar em branco"
-             return result
-
-    if counter == 1:  result=Calc_NTurns(N_turns1,indutance1,coil_area_e1,coil_len1) 
-    if counter == 2:  result=Calc_ind(N_turns1,indutance1,coil_area_e1,coil_len1) 
-    if counter == 3:  result=Calc_coilA(N_turns1,indutance1,coil_area_e1,coil_len1) 
-    if counter == 4:  result=Calc_coil_len(N_turns1,indutance1,coil_area_e1,coil_len1)  
-    if counter > 4 or counter<0: result = "Apenas um espaço precisa estar vazio"
-    
-    print(result)
-    print(counter)
+    numbers= [ coil_area.get(), coil_len.get(),indutance.get(),N_turns.get()] 
+    calcs_data(numbers)
+ 
     Label(text=result, background=b_color).place(x=400, y=100)
 
 
