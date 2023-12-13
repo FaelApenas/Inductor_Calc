@@ -32,9 +32,7 @@ N_turns.place(x=110, y=125, width=200, height=20)
 
 
 def Call_calc():  
-    counter = 0 
     result = ""
-
     numbers= [ coil_area.get(), coil_len.get(),indutance.get(),N_turns.get()] 
     calcs_data(numbers)
  

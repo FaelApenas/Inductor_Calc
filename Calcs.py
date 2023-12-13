@@ -1,7 +1,6 @@
 import numpy as np
 from Aux_fun import * 
-u= 0.000001 # micro
-m= 0.001# mili
+
 
 def calcs_data(numbers): 
     type_calc= f_calc_type(numbers)

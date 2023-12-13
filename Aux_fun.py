@@ -1,3 +1,14 @@
+class notation(object): 
+    def __init__(self,letter,value): 
+        self.letter = letter
+        self.value= value
+
+notation_table= {0: notation("m",10**(-3)),
+                 1: notation("u",10**(-6)), 
+                 2: notation("n",10**(-9)),
+                 3: notation("k",10**3), 
+                 4: notation("M",10**6),
+                 }
 u= 0.000001 # micro
 m= 0.001# mili
 
