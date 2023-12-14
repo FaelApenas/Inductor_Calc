@@ -3,11 +3,11 @@ class notation(object):
         self.letter = letter
         self.value= value
 
-notation_table= {0: notation("m",10**(-3)),
-                 1: notation("u",10**(-6)), 
-                 2: notation("n",10**(-9)),
-                 3: notation("k",10**3), 
-                 4: notation("M",10**6),
+notation_table= {'m': notation("m",10**(-3)),
+                 'u': notation("u",10**(-6)), 
+                 'n': notation("n",10**(-9)),
+                 'k': notation("k",10**3), 
+                 'M': notation("M",10**6),
                  }
 u= 0.000001 # micro
 m= 0.001# mili
@@ -24,15 +24,9 @@ def f_calc_type(numbers):
     return Calc_type 
  
 def handle_data(data): 
-    if(data[-1:]=='u'): 
-        data = data.rstrip(data[-1])
-        data = float(data)
-        data = data * u
-        return data 
-    if (data[-1:]=='m'): 
-        data = data.rstrip(data[-1])
-        data = float(data)
-        data = data * m
-        return data 
-
+    if data[-1:] in notation_table:
+        notes= notation_table[data[-1:]].value
+        data =data.rstrip(data[-1:])
+        data =float(data)
+        data = data *  notes
     return float(data)

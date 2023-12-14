@@ -1,12 +1,16 @@
 import numpy as np
 from Aux_fun import * 
 
+# Constants 
+Mag_field = 0.35 
+#----------
+
 
 def calcs_data(numbers): 
     type_calc= f_calc_type(numbers)
     if type_calc==0xFF: 
         print("Only one variable should be empty") 
-        return
+        return "Only one variable should be empty"
     else: 
         match type_calc: 
             case 1: 
@@ -34,9 +38,12 @@ def third_var(numbers):
     pass 
 
 def first_var(numbers): 
-    print("Area das espiras")
-
-    pass
+    print("first var")
+    coil_len= handle_data(numbers[1])
+    indutance= handle_data(numbers[2])
+    N_turns= handle_data(numbers[3])
+    result = coil_len*indutance*N_turns
+    return result
 
 def second_var(numbers): 
     print("Comprimento das espiras ")

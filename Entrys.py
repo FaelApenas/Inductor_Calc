@@ -32,10 +32,10 @@ N_turns.place(x=110, y=125, width=200, height=20)
 
 
 def Call_calc():  
-    result = ""
-    numbers= [ coil_area.get(), coil_len.get(),indutance.get(),N_turns.get()] 
-    calcs_data(numbers)
- 
+    Label(text="                                       ", background=b_color).place(x=400, y=100)
+    numbers= [coil_area.get(), coil_len.get(),indutance.get(),N_turns.get()] 
+    result = "Result : "+ str(calcs_data(numbers))
+    
     Label(text=result, background=b_color).place(x=400, y=100)
 
 
