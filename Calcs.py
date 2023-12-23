@@ -26,18 +26,7 @@ def calcs_data(numbers):
                 result= fourth_var(numbers)
                 return result 
     
-
-
-def fourth_var(numbers): 
-    print("Numr de voltas")
-    pass
-
-def third_var(numbers): 
-    print("Indutancia")
-
-    pass 
-
-def first_var(numbers): 
+def first_var(numbers):  # 
     print("first var")
     coil_len= handle_data(numbers[1])
     indutance= handle_data(numbers[2])
@@ -48,4 +37,18 @@ def first_var(numbers):
 def second_var(numbers): 
     print("Comprimento das espiras ")
 
+
+def third_var(numbers): 
+    print("Indutancia")
+
+    pass 
+
     pass
+def fourth_var(numbers): 
+    print("Numr de voltas")
+    pass
+
+
+
+
+
