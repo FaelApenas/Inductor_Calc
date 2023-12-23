@@ -26,12 +26,12 @@ def calcs_data(numbers):
                 result= fourth_var(numbers)
                 return result 
     
-def first_var(numbers):  # 
+def first_var(numbers):  
     print("first var")
-    coil_len= handle_data(numbers[1])
+    peak_c= handle_data(numbers[1])
     indutance= handle_data(numbers[2])
     N_turns= handle_data(numbers[3])
-    result = coil_len*indutance*N_turns
+    result = 0
     return result
 
 def second_var(numbers): 
@@ -44,9 +44,13 @@ def third_var(numbers):
     pass 
 
     pass
-def fourth_var(numbers): 
-    print("Numr de voltas")
-    pass
+def fourth_var(numbers):
+
+    air_gap= handle_data(numbers[0])
+    peak_c= handle_data(numbers[1])
+    indutance= handle_data(numbers[2])
+    result= (indutance* peak_c*10000)/(Mag_field*air_gap)
+    return result
 
 
 
