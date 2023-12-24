@@ -31,26 +31,36 @@ def first_var(numbers):
     peak_c= handle_data(numbers[1])
     indutance= handle_data(numbers[2])
     N_turns= handle_data(numbers[3])
-    result = 0
-    return result
+    air_gap= (indutance* peak_c*100000)/(Mag_field*N_turns)
+    return air_gap
 
 def second_var(numbers): 
     print("Comprimento das espiras ")
-
+    air_gap= handle_data(numbers[0])
+    indutance= handle_data(numbers[2])
+    N_turns= handle_data(numbers[3])
+    peak_c= (Mag_field*N_turns*air_gap)/(indutance*100000)
+    return peak_c
 
 def third_var(numbers): 
     print("Indutancia")
+    air_gap= handle_data(numbers[0])
+    peak_c= handle_data(numbers[1])
+    N_turns= handle_data(numbers[3])
+    indutance= (Mag_field*N_turns*air_gap)/(peak_c*100000)
+    return indutance
 
-    pass 
 
-    pass
+     
+
+    
 def fourth_var(numbers):
-
     air_gap= handle_data(numbers[0])
     peak_c= handle_data(numbers[1])
     indutance= handle_data(numbers[2])
-    result= (indutance* peak_c*10000)/(Mag_field*air_gap)
-    return result
+
+    N_turns= (indutance* peak_c*100000)/(Mag_field*air_gap)
+    return N_turns
 
 
 
