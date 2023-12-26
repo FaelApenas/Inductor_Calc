@@ -6,6 +6,7 @@ class notation(object):
 notation_table= {'m': notation("m",10**(-3)),
                  'u': notation("u",10**(-6)), 
                  'n': notation("n",10**(-9)),
+                 'p': notation("p",10**(-12)),
                  'k': notation("k",10**3), 
                  'M': notation("M",10**6),
                  }
@@ -13,7 +14,7 @@ u= 0.000001 # micro
 m= 0.001# mili
 
 def f_calc_type(numbers):
-    verify_lock=True
+    verify_lock=True # 
     Calc_type= 0   #The type of the calc will be defined by this number 
     for number in numbers: 
         if number =="":
@@ -23,6 +24,7 @@ def f_calc_type(numbers):
             verify_lock=False 
     return Calc_type 
  
+#This function is to analis
 def handle_data(data): 
     if data[-1:] in notation_table:
         notes= notation_table[data[-1:]].value
